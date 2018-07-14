@@ -1,0 +1,23 @@
+<div class="deck-card" ng-mouseOver="$ctrl.updateVerticalPosition($event)">
+
+  <div class="deck-card__counter">
+    <i class="deck-card__button fa fa-caret-up" ng-click="$ctrl.addCard()"></i>
+    <p class="deck-card__count" ng-bind="$ctrl.card.count"></p>
+    <i class="deck-card__button fa fa-caret-down" ng-click="$ctrl.removeCard()"></i>
+  </div>
+
+  <div class="deck-card__text">
+    <p class="deck-card__name" ng-bind="$ctrl.card.name"></p>
+    <p class="deck-card__type" ng-bind="$ctrl.card.originalType | stringReplace:'—':'-'"></p>
+  </div>
+
+  <div class="deck-card__stats">
+    <p class="deck-card__cost" ng-bind-html="$ctrl.card.manaCost | manaReplace | unsafe"></p>
+    <p class="deck-card__creature-stats" ng-if="$ctrl.card.power">
+      <span ng-bind="$ctrl.card.power"></span>/<span ng-bind="$ctrl.card.toughness"></span>
+    </p>
+  </div>
+
+  <image class="deck-card__image" ng-style="$ctrl.verticalPosition" ng-src="{{$ctrl.card.imageUrl}}" />
+
+</div>

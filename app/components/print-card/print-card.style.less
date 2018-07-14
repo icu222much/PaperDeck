@@ -1,0 +1,39 @@
+.print-card {
+  display: inline;
+}
+
+.print-card__card {
+  position: relative;
+  display: inline-table;
+  margin: 8px;
+  padding: 3px 8px;
+  width: 223px;
+  height: 310px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: 0.8rem;
+}
+
+.print-card__title {
+  display: inline;
+  font-weight: 600;
+}
+
+.print-card__mana {
+  display: inline;
+  float: right;
+}
+
+.print-card .icon::before {
+  color: black;
+}
+
+.print-card__text {
+  line-height: 1rem;
+}
+
+.print-card__stat {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+}

@@ -1,0 +1,86 @@
+<section class="browse-form">
+    <form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Card Name</label>
+                    <input class="form-control" ng-model="$ctrl.parameters.name" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Colour</label>
+                    <ui-select multiple ng-model="$ctrl.parameters.colors" theme="select2" close-on-select="false" class="browse-form__ui-select">
+                        <ui-select-match placeholder="Select colour...">{{$item}}</ui-select-match>
+                        <ui-select-choices repeat="item in ($ctrl.colours | filter: $select.search)">
+                            <span ng-bind="item"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Mana Cost</label>
+                    <input class="form-control browse-form__number-field" type="number" min="0" max="50" ng-model="$ctrl.parameters.cost.min" placeholder="No Min" />
+                    -
+                    <input class="form-control browse-form__number-field" type="number" min="0" max="50" ng-model="$ctrl.parameters.cost.max" placeholder="No Max" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Type</label>
+                    <ui-select multiple ng-model="$ctrl.parameters.types" theme="select2" close-on-select="false" class="browse-form__ui-select">
+                        <ui-select-match placeholder="Select types...">{{$item}}</ui-select-match>
+                        <ui-select-choices repeat="item in ($ctrl.types | filter: $select.search)">
+                            <span ng-bind="item"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Set</label>
+                    <ui-select multiple ng-model="$ctrl.parameters.setName" theme="select2" close-on-select="false" class="browse-form__ui-select browse-form__ui-select--thicker-border">
+                        <ui-select-match placeholder="Select sets...">{{$item}}</ui-select-match>
+                        <ui-select-choices repeat="item in ($ctrl.sets | filter: $select.search)">
+                            <span ng-bind="item"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Power</label>
+                    <input class="form-control browse-form__number-field" type="number" min="0" max="50" ng-model="$ctrl.parameters.power.min" placeholder="No Min" />
+                    -
+                    <input class="form-control browse-form__number-field" type="number" min="0" max="50" ng-model="$ctrl.parameters.power.max" placeholder="No Max" />
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label browse-form__header">Toughness</label>
+                    <input class="form-control browse-form__number-field" type="number" min="0" max="50" ng-model="$ctrl.parameters.toughness.min" placeholder="No Min" />
+                    -
+                    <input class="form-control browse-form__number-field" type="number" min="0" max="50" ng-model="$ctrl.parameters.toughness.max" placeholder="No Max" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="button" class="browse-form__button btn btn-primary" ng-click="$ctrl.onSearchClick()">Search</button>
+                <button type="button" class="browse-form__button btn btn-secondary" ng-click="$ctrl.onResetClick()">Reset form</button>
+            </div>
+        </div>
+    </form>
+</section>

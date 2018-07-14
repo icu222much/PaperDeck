@@ -1,0 +1,89 @@
+
+.deck-card {
+  padding: 0 15px 20px 15px;
+  border: 1px solid #dcdcdc;
+  border-left: 0;
+  border-right: 0;
+}
+
+.deck-card:hover {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-left: 0;
+  border-right: 0;
+}
+
+.deck-card__counter {
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+.deck-card__button {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.deck-card__button:hover {
+  color: #666666;
+}
+
+.deck-card__button:active {
+  font-size: 1.1rem;
+}
+
+.deck-card__count {
+  position: relative;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
+
+.deck-card__text {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.deck-card__name {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.deck-card__type {
+  margin-bottom: 0;
+}
+
+.deck-card__stats {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  float: right;
+  text-align: right;
+}
+
+.deck-card__cost {
+  margin-bottom: 0;
+}
+
+.deck-card__creature-stats {
+  margin-bottom: 0;
+}
+
+.deck-card__image {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -235px;
+}
+
+.deck-card:hover .deck-card__image {
+  display: block;
+}

@@ -1,0 +1,7 @@
+<section class="print">
+
+    <div class="print-card" ng-repeat="card in $ctrl.cards | orderBy: 'name'">
+        <print-card ng-repeat="i in $ctrl.getCount(card) track by $index" card="card"></print-card>
+    </div>
+
+</section>

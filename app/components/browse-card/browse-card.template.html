@@ -1,0 +1,9 @@
+<section class="browse-card">
+    <image class="browse-card__image" ng-src="{{$ctrl.data.imageUrl}}" ng-click="$ctrl.addCard()" />
+    <div class="browse-card__quantity">
+      <span class="browse-card__circle" ng-click="$ctrl.removeCard()"><i class="fa fa-minus"></i></span>
+      <span class="browse-card__circle" ng-if="$ctrl.data.count" ng-click="$ctrl.addCard()" ng-bind="$ctrl.data.count"></span>
+      <span class="browse-card__circle" ng-if="!$ctrl.data.count" ng-click="$ctrl.addCard()">0</span>
+      <span class="browse-card__circle" ng-click="$ctrl.addCard()"><i class="fa fa-plus"></i></span>
+    </div>
+</section>

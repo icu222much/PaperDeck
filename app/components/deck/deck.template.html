@@ -1,0 +1,34 @@
+<section class="deck">
+
+    <div class="deck__empty-message" ng-if="$ctrl.cards.length === 0">
+        Your deck is empty
+    </div>
+
+    <div class="deck__header" ng-if="$ctrl.cards.length > 0">
+        <p class="deck__total-cards">
+            <span class="deck__count" ng-bind="$ctrl.numOfCards()"></span>Total Card<span ng-if="$ctrl.numOfCards() > 1">s</span>
+        </p>
+        <div class="deck__right-col">
+            <button class="deck__print-btn btn btn-primary" ng-click="$ctrl.onPrintClick()">Print</button>
+
+            <div class="deck__sort form-group">
+                <label class="col-form-label">Sort by</label>
+                <select class="form-control deck__sort-selector" ng-model="$ctrl.sortOrder">
+                  <option ng-repeat="option in $ctrl.sortingOptions" ng-value="option.value" ng-bind="option.text"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="deck__type" ng-repeat="type in $ctrl.types" ng-if="$ctrl.getTypeCount(type) > 0">
+        <p class="deck__type-heading">
+            <span class="deck__count" ng-bind="$ctrl.getTypeCount(type)"></span>{{type}}<span ng-hide="$ctrl.getTypeCount(type) === 1">s</span>
+        </p>
+        <deck-card
+            ng-repeat="card in $ctrl.cards | orderBy: $ctrl.sortOrder : $ctrl.sortOrderDirection"
+            ng-if="$ctrl.isType(type, card)"
+            card="card"
+        ></deck-card>
+    </div>
+
+</section>

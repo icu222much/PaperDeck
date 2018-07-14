@@ -1,0 +1,22 @@
+.print {
+  display: none;
+}
+
+@media print {
+  .paper-deck {
+    margin: 0;
+    padding: 0;
+  }
+
+  .print {
+    display: block;
+    background: white;
+    color: black;
+  }
+
+  .paper-deck__header,
+  .paper-deck__browse,
+  .paper-deck__deck {
+    display: none;
+  }
+}

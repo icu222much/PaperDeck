@@ -1,0 +1,39 @@
+<section class="browse js-browse">
+    <div class="row">
+        <div class="col-lg-12">
+            <browse-form cards="$ctrl.cards"></browse-form>
+        </div>
+    </div>
+
+    <div class="row" ng-if="$ctrl.cards.length > 0">
+        <div class="col-lg-12">
+            <div class="browse__search-header" ng-style="$ctrl.width">
+                <p class="browse__search-count">Search results: {{$ctrl.cards.length}} 
+                    <span ng-if="$ctrl.cards.length === 1">card</span>
+                    <span ng-if="$ctrl.cards.length >   1">cards</span>
+                </p>
+                <div class="browse__sort-row form-group">
+                    <label class="browse__sort-label col-form-label">Sort by</label>
+                    <select class="form-control browse__sort" ng-model="$ctrl.sortOrder">
+                      <option ng-repeat="option in $ctrl.sortingOptions" ng-value="option.value" ng-bind="option.text"></option>
+                    </select>
+                </div>  
+            </div>
+            <p class="browse__instructions">Click a card to add it to your deck</p> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <span ng-if="$ctrl.cards.length === 0">No cards found</span>
+            <browse-card 
+                ng-repeat="card in $ctrl.cards | orderBy: $ctrl.sortOrder : $ctrl.sortOrderDirection" 
+                ng-if="card.imageUrl"
+                data="card" 
+            ></browse-card>
+        </div>
+    </div>
+</section>
+
+
+

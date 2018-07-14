@@ -1,0 +1,53 @@
+.paper-deck {
+  padding: 2.5rem;
+  color: #333333;
+  font-size: 16px;
+  font-family: 'Open Sans';
+}
+
+.paper-deck__browse {
+  width: calc(~'100% - 400px');
+  display: inline-block;
+}
+
+.paper-deck__deck-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.paper-deck__deck {
+  display: inline-block;
+  width: 400px;
+  height: 100%;
+  overflow-y: auto;
+  background: #dcdcdc;
+  border-left: 1px solid rgba(0,0,0,0.2);
+
+  &::-webkit-scrollbar {
+      width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #666;
+  }
+}
+
+.paper-deck__header {
+  width: calc(~'100% - 400px');
+}
+
+.paper-deck__title {
+  font-size: 2.4rem;
+  color: #007bff;
+}
+
+.paper-deck__sub-title {
+  font-size: 1.5rem;
+  color: #666666;
+}

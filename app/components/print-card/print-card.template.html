@@ -1,0 +1,11 @@
+<div class="print-card__card">
+    <p class="print-card__title" ng-bind="$ctrl.card.name"></p>
+    <p class="print-card__mana" ng-bind-html="$ctrl.card.manaCost | manaReplace | unsafe"></p>
+    <p class="print-card__type" ng-bind="$ctrl.card.type | stringReplace:'—':'-'"></p>
+    <p class="print-card__text" ng-bind="$ctrl.card.text"></p>
+    <p class="print-card__stat" ng-if="$ctrl.card.power">
+        <span ng-bind="$ctrl.card.power"></span>
+        /
+        <span ng-bind="$ctrl.card.toughness"></span>
+    </p>
+</div>
